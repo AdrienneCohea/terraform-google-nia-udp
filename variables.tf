@@ -23,3 +23,7 @@ variable "services" {
     })
   )
 }
+
+variable "managed_zone" {
+  type = string
+}
