@@ -1,4 +1,4 @@
-resource "google_dns_record_set" "frontend" {
+resource "google_dns_record_set" "service" {
   for_each     = var.services
   name         = "${each.value["meta"]["dns_a_record"]}.${data.google_dns_managed_zone.service.dns_name}"
   type         = "A"
