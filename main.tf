@@ -1,6 +1,6 @@
 resource "google_dns_record_set" "service" {
   for_each     = var.services
-  name         = "${each.value["meta"]["dns_a_record"]}.${data.google_dns_managed_zone.service.dns_name}"
+  name         = "${each.value.name}.${data.google_dns_managed_zone.service.dns_name}"
   type         = "A"
   ttl          = 300
   managed_zone = data.google_dns_managed_zone.service.name
